@@ -7,6 +7,7 @@ import PrizeResult from './PrizeResult/PrizeResult';
 import TextLoop from "react-text-loop";
 
 const app = (props) => {
+  // items to be added for text loop and draw results. New items must be manually added to probability calculations below
   const drawItems = [
       'Prize 1',
       'Prize 2',
@@ -18,6 +19,7 @@ const app = (props) => {
     drawn: false
   })
 
+  // initial state redundant with text loop. placeholder
   const [itemDrawnState, setItemDrawnState] = useState({
     itemDrawn: 'Click to draw'
   })
@@ -36,6 +38,7 @@ const app = (props) => {
     })
   }
 
+  // probabilities are hard coded. ammend to change draw probabilites for each item
   const drawItemHandler = () => {
     let ranNum = Math.floor(Math.random()*100)
     console.log(ranNum);
@@ -70,7 +73,7 @@ const app = (props) => {
       <div style={{position: 'fixed', left: '45%',
                 top: '32%' }}>
         <h1>
-          <TextLoop children={drawItems} interval={100}/>
+          <TextLoop children={drawItems} interval={100}/> 
         </h1>
       </div>   
       <div style={{position: 'fixed', left: '48%',
